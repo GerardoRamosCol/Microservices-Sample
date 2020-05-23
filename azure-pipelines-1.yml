@@ -10,10 +10,11 @@ pool:
   name: Azure Pipelines
   vmImage: 'ubuntu-latest'
   variables:
-  - group: dev
+  - group: 'var dev'
 
 steps:
 - script: echo Hello, world!
+    echo $container
   displayName: 'Run a one-line script'
 
 - script: |
@@ -21,9 +22,3 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: |
-   echo Write your commands here
-   
-   echo [env.parameter.container]
-   
-  displayName: 'Command Line Script'
